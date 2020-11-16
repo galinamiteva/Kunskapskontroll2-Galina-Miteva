@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/237ade0af7.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+
+<body>
+    <div id='searh-box'>
+        <input type="text" class="search" placeholder="City Name" id='searchInput'>
+        <button class="submit" id="submitBtn">Submit</button>
+    </div>
+    <div class='information'>
+        <p>Please, write correctly the city name </p>
+    </div>
+    <div id='weatherContainer'>
+        <div id='weatherDescription'>
+            <h1 id='cityName'></h1>
+            <div id='main-description'>
+                <div id='temperature' class='main-description-items'></div>
+                <div><i id='temperature-icon' class='main-description-items'></i></div>
+                <div id='weatherDescriptionHeader' class='main-description-items'></div>
+                <div id='image-icon'><img id='IconImg' class='main-description-items'></div>
+            </div>
+            <hr>
+            <div id='windSpeed' class='details'></div>
+            <div id='humidity' class="details"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    height: 100vh;
+    background-image: url('default.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: #ffffff;
+    text-shadow: 1px 2px 1px black;
+    font-family: 'Oswald', sans-serif;
+}
+
+#weatherContainer{
+    height:18rem ;
+    width: 21rem;
+    background-color: rgba(0,0,0, .2);
+    box-shadow: 1px 1px 5px black;
+    padding: 20px;
+    border-radius: 10px;
+    position: absolute;
+    visibility: hidden;    /*för att bli hidden när startar man sökning  */
+}
+
+#weatherContainer h1{
+    margin-right: 5px;
+    font-size: 40px;
+    font-family: 'Bebas Neue', cursive, sans-serif;
+}
+
+#searh-box{
+    padding:15px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#searh-box input{
+    width: 200px;
+}
+
+#searh-box button{
+   background-color:rgba(9, 72, 102, 0.95) ;
+    width: 75px;
+    color: #ffffff;
+    font-family: 'Oswald', sans-serif;
+    cursor: pointer;
+}
+
+.submit{
+    box-shadow: 2px 2px 5px black;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+
+
+#main-description{
+    height: 100%;
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: space-evenly;
+    align-items: center;      
+    
+}
+
+
+#weatherDescriptionHeader{
+    font-size:22px;
+    
+}
+#temperature{
+    font-size: 38px;
+    
+}
+
+.details{
+    display: block;
+    font-size: 21px;
+    text-align:right;
+}
+
+hr{
+    margin-bottom: 20px;
+}
+#IconImg{
+    width: 60px;
+    height: 60px;
+    vertical-align: -50%;
+}
+
+.information{
+    position: absolute;
+    top:50px;
+    right: 100px;    
+    color: rgba(231, 84, 26, 0.95);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 13px;
+    text-shadow: none;
+    visibility:hidden;
+}
