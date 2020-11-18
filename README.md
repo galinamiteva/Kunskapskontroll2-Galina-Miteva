@@ -11,7 +11,7 @@ CSS filen  innehåler all information om stylen och appen är med responsiv disa
 
 3. Det nästa funktionen setPositionForWeather sätter dynamisk positionen på weathers container , eftersom i början , när innehållet är tomt, containaren är hidden. Funktionen kalkylerar positionen i centern och lite uppåt. 
 
-4. Funktionen addTemperatureIcon sätter en simpel temperatur icon, som bytts i samband med information från APIn för temperaturen. 
+4. Funktionen addTemperatureIcon sätter en simpel temperatur icon, som bytts i samband med information från APIn för temperaturen. EX- mycket kalla stader- 'Resolute', 'Dikson',  mycket varma stader - 'Aruba', 'Porlamar', mellan - 'Varna', 'Kairo'
 
 5. Funktionen changeColor byter background color på submitbuttonen  i samband med information från APIn för temperaturen (från dark blå till оrangegult ).
 
