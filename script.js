@@ -1,35 +1,44 @@
-let appId='efecc9440d45859c6ed71fa0b2d9f4be';
+let appId='2ecfc50db180ec401750ac2ba23f77b6';
 let units = 'metric'; //metric
-let searchMethod;   //Z för ZiP code eller Q för stad
 
-function getSearchMethod(searchTerm) {
-    if(searchTerm.length === 5 && Number.parseInt(searchTerm) + '' === searchTerm)  
-        searchMethod = 'zip';
-    else 
-        searchMethod = 'q';
-}
 
 function searchWeather(searchTerm) {
-    getSearchMethod(searchTerm);
-    fetch(`http://api.openweathermap.org/data/2.5/weather?${searchMethod}=${searchTerm}&APPID=${appId}&units=${units}`)
-        .then((result) => {
-            return result.json();
-        }).then((res) => {
-            into(res);
-            addTemperatureIcon(res);
-            changeColor(res);
-            let p =document.querySelector('p');
-            p.style.visibility='hidden';
+  
+    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${searchTerm}&APPID=${appId}&units=${units}`)
+        .then(function (response){
+            //statuskod 200 - 299 betyder att allt har gått bra
+            if(response.status >= 200 && response.status <300){
+                return response.json();
+            }
+            //statuskod 404 "not found" betyder att staden inte kunde hittas
+            else if(response.status === 404){
+                
+                let p =document.querySelector('p');
+                p.style.visibility='visible';
+                console.log('Please, write correctly the city name ');
+                
+                throw 'Staden inte hittas'
+            }
+    
+            //statuskod 401 "unauthorized betyder att api nyckeln är fel
+                else if(response.status === 401){
+                throw response.statusText;
+            }
+        }       
+    ).then((res) => {
+        into(res);
+        addTemperatureIcon(res);
+        changeColor(res);
+        let p =document.querySelector('p');
+        p.style.visibility='hidden';
     }
     ).catch(
-        function (){
-            
-            let p =document.querySelector('p');
-            p.style.visibility='visible';
-            console.log('Please, write correctly the city name ');
-            
+        
+        function(error){
+            console.log(error); 
         }
-    ); 
+        
+    )
 }
 
 
