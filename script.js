@@ -159,11 +159,11 @@ function changeColor(resultFromServer){  //functionen som bytar färg pa submitB
          return searchBtn.style.backgroundColor="rgba(198, 73, 1, 0.95)";
      }else if (temperature>=25 && temperature<30){
          return searchBtn.style.backgroundColor='rgba(198, 145, 1, 0.925)';   
-     }else if(temperature>=15 && temperature<25){
+     }else if(temperature>=10 && temperature<25){
          return searchBtn.style.backgroundColor=' rgba(23, 151, 119, 0.95)';
-     }else if(temperature>=0 && temperature<15){
+     }else if(temperature>=0 && temperature<10){
          return searchBtn.style.backgroundColor=' rgba(1, 136, 198, 0.95)';
-     }else if (temperature>=-20 && temperature<0){
+     }else if (temperature>=-10 && temperature<0){
          return searchBtn.style.backgroundColor='rgba(1, 80, 198, 0.95)';        
      }else{
          return searchBtn.style.backgroundColor=' rgba(76, 1, 198, 0.95)';
